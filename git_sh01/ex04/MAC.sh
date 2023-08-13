@@ -1,2 +1,2 @@
 #!/bin/bash
-ifconfig | grep 'ether ' | sed "s/ether //"
+ifconfig | grep 'ether ' | tr -d "ether "

@@ -1,2 +1,2 @@
 #!/bin/bash
-find .| wc -l | sed 's/^[ ]*//'
+find . -type f | wc -l | sed 's/^[ ]*//'
