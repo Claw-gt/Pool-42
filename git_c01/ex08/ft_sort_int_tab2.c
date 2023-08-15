@@ -1,28 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_sort_int_tab2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/14 14:58:42 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/15 13:26:16 by clagarci         ###   ########.fr       */
+/*   Created: 2023/08/15 12:32:06 by clagarci          #+#    #+#             */
+/*   Updated: 2023/08/15 12:45:05 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
 
-void	ft_rev_int_tab(int *tab, int size);
-
-int	main(void)
+void	ft_sort_int_tab(int *tab, int size)
 {
+	int	*ptr;
+	int	temp;
+	int	k;
 	int	i;
-	int num[] = {1,2,3,4,5};
+	int	j;
+
+	j = 0;
 	i = 0;
-	ft_rev_int_tab(num, 5);
-	while (i < 5)
+	k = 0;
+	temp = 0;
+	ptr = tab + 1;
+	while (k < size)
 	{
-		printf("%d", *(num + i));
-		i++;
+		i = k + 1;
+		while (i < size)
+		{
+			if (*(tab + k) > *(tab + i))
+			{
+				temp = *(tab + k);
+				*(tab + k) = *(tab + i);
+				*(tab + i) = temp;
+			}
+			i++;
+		}
+		k++;
 	}
-	return (0);
+	while (j < size)
+	{
+		printf("%d",*(tab+j));
+		j++;
+	}	
 }

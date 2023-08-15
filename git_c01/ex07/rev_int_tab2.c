@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   rev_int_tab2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/14 14:58:42 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/15 13:26:16 by clagarci         ###   ########.fr       */
+/*   Created: 2023/08/15 09:36:32 by clagarci          #+#    #+#             */
+/*   Updated: 2023/08/15 10:12:51 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
+#include <unistd.h>
 
-void	ft_rev_int_tab(int *tab, int size);
-
-int	main(void)
+void rev_int_tab(int *tab, int size)
 {
 	int	i;
-	int num[] = {1,2,3,4,5};
+	int	temp;
+	int	j;
+
 	i = 0;
-	ft_rev_int_tab(num, 5);
-	while (i < 5)
+	j = 0;
+	temp = 0;
+	
+	while (i < (size / 2))
 	{
-		printf("%d", *(num + i));
+		temp = tab[i];
+		tab[i] = tab[size - 1 - i];
+		tab[size - 1 - i] = temp;
 		i++;
 	}
-	return (0);
+	while (j < size)
+	{
+		printf("%d",tab[j]);
+		j++;
+	}
 }

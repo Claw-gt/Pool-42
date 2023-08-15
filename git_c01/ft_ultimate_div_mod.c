@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/14 14:58:42 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/15 13:26:16 by clagarci         ###   ########.fr       */
+/*   Created: 2023/08/14 13:00:00 by clagarci          #+#    #+#             */
+/*   Updated: 2023/08/15 13:10:24 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-void	ft_rev_int_tab(int *tab, int size);
+#include <unistd.h>
 
-int	main(void)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	int	i;
-	int num[] = {1,2,3,4,5};
-	i = 0;
-	ft_rev_int_tab(num, 5);
-	while (i < 5)
-	{
-		printf("%d", *(num + i));
-		i++;
-	}
-	return (0);
+	int	div;
+	int	mod;
+
+	div = *a / *b;
+	mod = *a % *b;
+	*a = div;
+	*b = mod;
 }

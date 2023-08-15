@@ -5,21 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/14 14:58:42 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/15 13:26:16 by clagarci         ###   ########.fr       */
+/*   Created: 2023/08/15 11:19:10 by clagarci          #+#    #+#             */
+/*   Updated: 2023/08/15 13:27:05 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
 
-void	ft_rev_int_tab(int *tab, int size);
+void	ft_sort_int_tab(int *tab, int size);
 
 int	main(void)
 {
+	int num[6] = {2,4,1,10,3,0};
 	int	i;
-	int num[] = {1,2,3,4,5};
+
 	i = 0;
-	ft_rev_int_tab(num, 5);
-	while (i < 5)
+	ft_sort_int_tab(num, 6);
+
+	while (i < 6)
 	{
 		printf("%d", *(num + i));
 		i++;
