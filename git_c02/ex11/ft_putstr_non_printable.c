@@ -16,8 +16,13 @@ void	ft_putstr_non_printable(char *str)
 {
 	char	*inicio;
 	char	c;
-	char	dec;
+    char    ch;
+    char    division;
+    char    module;
+	int	dec;
 
+    division = '0';
+    module = '0';
 	dec = 0;
 	c = 'a';
 	inicio = str;
@@ -25,24 +30,39 @@ void	ft_putstr_non_printable(char *str)
 	{
 		if (*str < 32 || *str > 126)
 		{
-			write(1, "\\", 2);
+			write(1, "\\", 1);
 			if (*str >= 0 && *str <= 15)
 			{
 				write(1, "0", 2);
 			}
 			dec = 0;
-			while (((*str < 20 && *str > 15) || (*str >= 0 && *str <  10)) && *str != dec)
+			while (*str < 32 && *str != dec)
 			{
-				dec++;	
+				if (*str > 9 && *str < 16)
+				{
+					c = 'a';
+					ch = 10;
+					while ((*str > 9 && *str < 16) && *str != ch)
+					{
+						c++;
+						ch++;
+					}
+					
+				}
+				dec++;
 			}
-			write(1, &dec, 1);
-			c = 'a';
-			while ((*str > 9 && *str < 16) && c != *str)
+			if (*str > 9 && *str < 16)
 			{
-				write(1,&c,1);
-				c++;
+				write (1, &c, 1);
 			}
-			write(1, &c, 1);
+			else 
+			{
+				division = dec / 10 + '0';
+            			module = dec % 10 + '0';
+				write (1, &division, 1);
+				write (1, &module, 1);
+			}
+
 		}
 		else
 		{
