@@ -6,7 +6,7 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:27:38 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/10 12:30:07 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/14 09:28:54 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,5 @@ void	ft_is_negative(int n)
 	else if (n >= 0)
 	{
 		write(1, "P", 1);
-	}
-	else
-	{
-		write(1, "That is not a number", 20);
 	}
 }

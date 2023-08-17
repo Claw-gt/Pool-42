@@ -6,7 +6,7 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 14:56:52 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/13 14:21:35 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/17 10:07:07 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,8 @@ void	ft_putnbr(int nb)
 		nb *= -1;
 		write(1, &negative, 1);
 	}
-	if (nb > 0)
-	{
-		module = nb % 10 + '0';
-		nb /= 10;
-		ft_putnbr(nb);
-		write(1, &module, 1);
-	}	
+	if (nb > 9)
+		ft_putnbr(nb / 10);
+	module =  nb % 10 + '0';
+	write(1, &module, 1);	
 }

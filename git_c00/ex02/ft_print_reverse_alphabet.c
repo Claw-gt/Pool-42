@@ -6,7 +6,7 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 10:55:59 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/10 11:02:56 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/13 17:40:17 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_reverse_alphabet(void)
 {
-	int	c;
+	char	c;
 
 	c = 'z';
 	while (c >= 'a')
