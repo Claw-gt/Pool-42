@@ -94,21 +94,11 @@ char	*parameters(char *arr)
 	err = 0;
 	cols = 0;
 	rows = 16;
-	while (cols < 15)
+	while (h < 31)
 	{
-	/*	if (arr[cols] == '4' && arr[cols + 8] != '1')
-			err = 1;*/
-		parameters[i] = arr[cols];
+		parameters[i] = arr[h];
 		i++;
-		cols += 2;
-	}
-	while (rows < 31)
-	{
-	/*	if (arr[rows] == '4' && arr[rows + 8] != '1')
-			err = 1;*/
-		parameters[i] = arr[rows];
-		i++;
-		rows += 2;
+		h += 2;
 	}
 	/*while (parameters[h] != '\0')
 	{
@@ -131,6 +121,23 @@ char	*parameters(char *arr)
 	return (parameters);
 }
 //int	check_col_row(char *arr, char num_1, char num_2);
+void	parallel_cols_rows(char *parameters)
+{
+	int	j;
+	j = 0;
+	while (j < 12)
+	{
+		if ((parameters[j] + parameters[j + 4]) < 3 || (parameters[j] + parameters[j + 4]) > 5)
+		{
+			return (1);
+		{
+		if (j == 3)
+		{
+			j = 7;
+		{
+		j++;
+	{
+{
 
 void	no_comb(char *parameters)
 {
@@ -141,7 +148,7 @@ void	no_comb(char *parameters)
 	h = 0;
 	err = 0;
 	i = 0;
-	while (i < 8)
+	/*while (i < 4)
 	{
 		if ((parameters[i] + parameters[i + 4]) < 3 || (parameters[i] + parameters[i + 4]) > 5)
 		{
@@ -150,7 +157,8 @@ void	no_comb(char *parameters)
 		}
 		i++;
 	}
-	while (i < 16)
+	i = 8;
+	while (i < 12)
 	{
 		if ((parameters[i] + parameters[i + 4]) < 3 || (parameters[i] + parameters[i + 4]) > 5)
 		{
@@ -158,7 +166,8 @@ void	no_comb(char *parameters)
 			break;
 		}
 		i++;
-	}
+	}*/
+		err = parallel_cols_rows(parameters);
 	/*while (parameters[h] != '\0')
 	{
 		printf("%c", parameters[h]);
