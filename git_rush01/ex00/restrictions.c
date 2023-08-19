@@ -46,6 +46,12 @@ int	restrictions_arguments(int argc, char *arr)
 				numbers[l] = arr[i];*/
 			num_digits++;
 		}
+		if (arr[i + 1] != ' ')
+		{
+			write(1, "\nspace invalid->\n", 14);
+			err = 1;
+			break ;
+		}
 		else
 		{
 			err = 1;
@@ -54,7 +60,7 @@ int	restrictions_arguments(int argc, char *arr)
 //		l++;
 		i += 2;
 	}
-	while (arr[k] != '\0')
+	/*while (arr[k] != '\0')
 	{
 		if (arr[k] != ' ')
 		{
@@ -63,7 +69,7 @@ int	restrictions_arguments(int argc, char *arr)
 			break ;
 		}
 		k += 2;
-	}
+	}*/
 	if (argc != 2 || num_digits != 16 || arr[31] == ' ')
 	{
 	//	printf("\n%d\n", num_digits);
