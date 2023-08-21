@@ -6,7 +6,7 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:04:40 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/17 08:46:45 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/21 10:21:42 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	main(void)
 	char	*dst;
 //	char	c;
 	int		maxsize;
-	char	str1[4] = "hola";
-	char	str2[4] = "adios";
+//	char	str1[4] = "hola";
+//	char	str2[4] = "adios";
 
 	maxsize = strlen("hola mundo") + 1;
 	//printf("%lu",sizeof(*dst));
