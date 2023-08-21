@@ -6,45 +6,153 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 12:53:33 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/19 14:24:29 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/20 19:42:43 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-void	error(int err);
-
-void	matrix(char *arr)
+int	**matrix_init(void)
 {
-	int		cols;
-	int 	err;
-	char	*parameters;
-	int		i;
-	int		j;
+	int		**matrix;
 	int		rows;
+	int		columns;
+	int		i;
 
-	parameters = (char *)malloc(16*sizeof(char));
-	j = 0;
 	i = 0;
-	err = 0;
-	cols = 0;
-	rows = 16;
-	while (cols < 15)
+	rows = 0;
+	columns = 0;
+	matrix = (int **)malloc(4*8);
+	while (rows < 4)
 	{
-		if (arr[cols] == '4' && arr[cols + 8] != '1')
-			err = 1;
-		parameters[i] = arr[cols];
+		matrix[rows] = (int *)malloc(4*4);
+		while (columns < 4)
+		{
+			matrix[rows][columns] = 0;
+			//write(1, &(char){**matrix + '0'}, 1);
+			columns++;
+		}
+		//write(1, "\n", 1);
+		columns = 0;
+		rows++;
+	}
+	return (matrix);
+}
+
+int	**assign_col(int rows,int columns, int num, int **mat)
+{
+	while (rows < 4 && num <= 4)
+	{
+		if (mat[rows][columns] == 0)
+			mat[rows][columns] = num;
+		num += 1;
+		rows++;
+	}
+	return (mat);
+}
+int	**matrix_col_four(int *parameters, int** mat)
+{
+	int	i;
+	int num;
+	int	rows;
+	int	columns;
+	int	j;
+	int	k;
+
+	j = 0;
+	k = 0;
+	columns = 0;
+	rows = 0;
+	i = 0;
+	while (i < 8)
+	{
+		if (parameters[i] == 4)
+		{
+			num = 1;
+			if (i < 4)
+			{
+				mat = assign_col(rows, columns, num, mat);
+				/*while (rows < 4 && num <= 4)
+				{
+					mat[rows][columns] = num;
+					//write(1, &(char){**mat + '0'},1);
+					num += 1;
+					rows++;
+				}*/
+			}
+			else if (i > 3)
+			{
+				while (rows >= 0 && num <= 4)
+				{
+					mat[rows][columns] = num;
+					num += 1;
+					rows--;
+				}
+			}
+		}
 		i++;
-		cols += 2;
+		columns++;
+		if (i == 4)
+		{
+			columns = 0;
+			rows = 3;
+		}
 	}
-	while (rows < 31)
+	return(mat);
+}
+
+int	**matrix_row_four(int *parameters, int **mat)
+{
+	int	i;
+	int num;
+	int	rows;
+	int	columns;
+	int	j;
+	int	k;
+	int	l;
+//	int **mat_cols;
+
+	l = 0;
+	j = 0;
+	k = 0;
+	columns = 0;
+	rows = 0;
+	i = 8;
+	while (i < 16)
 	{
-		if (arr[rows] == '4' && arr[rows + 8] != '1')
-			err = 1;
-		parameters[i] = arr[rows];
-		i++;	
-		rows += 2;
+	//	printf("i:%d\ncolumns:%d\n", i, columns);
+		if (parameters[i] == 4)
+		{
+			num = 1;
+			if (i < 12)
+			{
+				while (columns < 4 && num <= 4)
+				{
+					mat[rows][columns] = num;
+					//write(1, &(char){**mat + '0'},1);
+					num += 1;
+					columns++;
+				}
+			}
+			else if (i > 11)
+			{
+				while (columns >= 0 && num <= 4)
+				{
+					mat[rows][columns] = num;
+					num += 1;
+					columns--;
+				}
+			}
+		}
+		i++;
+		rows++;
+		if (i == 12)
+		{
+			rows = 0;
+			columns = 3;
+		}
 	}
-	error(err);
+	return(mat);
 }

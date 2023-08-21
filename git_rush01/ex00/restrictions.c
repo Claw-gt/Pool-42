@@ -6,15 +6,13 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 11:50:40 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/19 18:45:32 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/20 12:59:02 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-
-//int	check_col_row(char *arr, char num_1, char num_2);
 
 void	error(int err)
 {
@@ -27,40 +25,26 @@ int	restrictions_arguments(int argc, char *arr)
 	int		err;
 	int		i;
 	int		k;
-//	int		l;
 	int		num_digits;
-//	char	*numbers;
 
 	num_digits = 0;
 	k = 1;
 	i = 0;
-//	l = 0;
 	err = 0;
-	//numbers = (char *)malloc(16*sizeof(char));
 	while (arr[i] != '\0')
 	{
 		if (arr[i] > '0' && arr[i] < '5')
 		{
-			//write(1, &arr[i], 1);
-			/*if (l < 16)
-				numbers[l] = arr[i];*/
 			num_digits++;
-		}
-		if (arr[i + 1] != ' ')
-		{
-			write(1, "\nspace invalid->\n", 14);
-			err = 1;
-			break ;
 		}
 		else
 		{
 			err = 1;
 			break ;
-		}
-//		l++;
+		}	
 		i += 2;
 	}
-	/*while (arr[k] != '\0')
+	while (arr[k] != '\0')
 	{
 		if (arr[k] != ' ')
 		{
@@ -69,10 +53,10 @@ int	restrictions_arguments(int argc, char *arr)
 			break ;
 		}
 		k += 2;
-	}*/
+	}
 	if (argc != 2 || num_digits != 16 || arr[31] == ' ')
 	{
-	//	printf("\n%d\n", num_digits);
+		//printf("\n%d\n", num_digits);
 		write(1, "\nnum_digits invalid->\n", 20);
 		err =  1;
 	}
@@ -83,33 +67,28 @@ int	restrictions_arguments(int argc, char *arr)
 		return (0);
 }
 
-char	*parameters(char *arr)
+int	*parameters(char *arr)
 {
-	int		cols;
 	int 	err;
-	char	*parameters;
-	//char	parameters[16];
+	int		*parameters;
 	int		i;
 	int		j;
-	int		rows;
 	int		h;
-	parameters = (char *)malloc(16*sizeof(char));
+	parameters = (int *)malloc(16*4);
 	j = 0;
 	i = 0;
 	h = 0;
 	err = 0;
-	cols = 0;
-	rows = 16;
 	while (h < 31)
 	{
-		parameters[i] = arr[h];
+		parameters[i] = arr[h] - '0';
 		i++;
 		h += 2;
 	}
-	/*while (parameters[h] != '\0')
+	/*while (parameters[j] != '\0')
 	{
-		printf("%c", parameters[h]);
-		h++;
+		printf("%c", parameters[j]);
+		j++;
 	}*/
 	//evitar más de un 1 y un 4 en las terrazas
 	/*while (
@@ -123,11 +102,11 @@ char	*parameters(char *arr)
 		}
 	}*/
 	//error(err);
-	free (parameters);
+	//free (parameters);
 	return (parameters);
 }
-//int	check_col_row(char *arr, char num_1, char num_2);
-void	parallel_cols_rows(char *parameters)
+
+int	parallel_cols_rows(int *parameters)
 {
 	int	j;
 	j = 0;
@@ -135,17 +114,17 @@ void	parallel_cols_rows(char *parameters)
 	{
 		if ((parameters[j] + parameters[j + 4]) < 3 || (parameters[j] + parameters[j + 4]) > 5)
 		{
+			//write(1, &parameters[j], 1);
 			return (1);
-		{
+		}
 		if (j == 3)
-		{
 			j = 7;
-		{
 		j++;
-	{
-{
+	}
+	return (0);
+}
 
-void	no_comb(char *parameters)
+void	no_comb(int *parameters)
 {
 	int	i;
 	int	err;
@@ -154,7 +133,7 @@ void	no_comb(char *parameters)
 	h = 0;
 	err = 0;
 	i = 0;
-	/*while (i < 4)
+/*	while (i < 8)
 	{
 		if ((parameters[i] + parameters[i + 4]) < 3 || (parameters[i] + parameters[i + 4]) > 5)
 		{
@@ -163,8 +142,7 @@ void	no_comb(char *parameters)
 		}
 		i++;
 	}
-	i = 8;
-	while (i < 12)
+	while (i < 16)
 	{
 		if ((parameters[i] + parameters[i + 4]) < 3 || (parameters[i] + parameters[i + 4]) > 5)
 		{
@@ -173,10 +151,10 @@ void	no_comb(char *parameters)
 		}
 		i++;
 	}*/
-		err = parallel_cols_rows(parameters);
+	err = parallel_cols_rows(parameters);
 	/*while (parameters[h] != '\0')
 	{
-		printf("%c", parameters[h]);
+		printf("%d", parameters[h]);
 		h++;
 	}*/
 	error(err);
