@@ -6,7 +6,7 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 16:54:10 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/18 13:08:36 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/21 11:56:58 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@ void	ft_putstr_non_printable(char *str);
 int	main(void)
 {
 	//char	dle[0] = 'DLE';
-	ft_putstr_non_printable("20443dad \a42");
+	ft_putstr_non_printable("20443dad \n42");
 	return (0);
 }
