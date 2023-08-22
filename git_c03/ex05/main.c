@@ -5,22 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/21 18:29:55 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/22 10:46:49 by clagarci         ###   ########.fr       */
+/*   Created: 2023/08/22 10:48:14 by clagarci          #+#    #+#             */
+/*   Updated: 2023/08/22 12:19:48 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strstr(char *str, char *to_find);
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 
 int	main(void)
 {
-	char large[] = "Foo Bar Ba";
-	char small[] = " Ba";
-	char *ptr = NULL;
-	//ptr = strstr(large, small);
-	ptr = ft_strstr(large, small);
-	printf("%s", ptr);
+	char dest[50] = "hola";
+	char src[50] = "ad";
+	strlcat(dest, src, 6);
+	//ft_strlcat(dest, src, 6);
+	printf("%s", dest);
+//	printf("%lu", strlcat(dest, src, 15));
+	//printf("%u", ft_strlcat(dest, src, 15));
+	return (0);
 }
