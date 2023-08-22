@@ -24,7 +24,7 @@ void	ft_putnbr(int nb)
 		nb *= -1;
 		write(1, &negative, 1);
 	}
-	if (nb > 9)
+	if ((nb / 10) > 0)
 		ft_putnbr(nb / 10);
 	module =  nb % 10 + '0';
 	write(1, &module, 1);	
