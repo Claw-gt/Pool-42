@@ -6,12 +6,13 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:49:17 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/17 16:40:56 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/23 11:40:33 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 
@@ -22,14 +23,15 @@ int	main(void)
 	unsigned int size;
 	size = 7;
 	i = 0;
-	//char str1[5] = "hola\0";
-	//char str2[2] = "re";
-	char	*dst;
+	char str1[] = "hola\0";
+	char str2[] = "re";
+//	char	*dst;
 
-	dst = malloc(sizeof(*dst) * size);
-	len = ft_strlcpy(dst, "hol2323v", size);
+	//dst = malloc(sizeof(*dst) * size);
+	len = ft_strlcpy(str1, str2, 0);
 	printf("%d\n", len);
-	while (i < size)
+	printf("%s", str1);
+	/*while (i < size)
 	{
 		if (*dst == '\0')
 		{
@@ -41,6 +43,6 @@ int	main(void)
 		}
 		dst++;
 		i++;
-	}
+	}*/
 	return (0);
 }

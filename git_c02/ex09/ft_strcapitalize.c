@@ -6,7 +6,7 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 09:54:54 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/17 12:46:29 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/22 16:10:47 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ char	*ft_strcapitalize(char *str)
 			inicio = str + 1;
 		}
 		else if (str == inicio && (*str <= 122 && *str >= 97))
-		{
 			*str -= 32;
-		}
+		else if (str != inicio && (*str <= 90 && *str >= 65))
+			*str += 32;
 		str++;
 	}
 	str = ptr;
