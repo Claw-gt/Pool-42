@@ -6,7 +6,7 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 14:20:01 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/22 17:04:06 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/23 12:16:39 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,17 @@ int	ft_atoi(char *str)
 		}	
 		if ((str[i] == 45 || str[i] == 43) && num == 0)
 		{	
-			if (str[i] == 45)
+			while (str[i] == 45 || str[i] == 43)
 			{
-				count++;
-			}
-			printf("%d: %c", i, str[i]);
-			i++;
-			if (str[2] == 45)
-				printf("minus");	
+				if (str[i] == 45)
+				{
+					count++;
+				}
+				i++;
+			}	
 		}
 		if (str[i] <= 57 && str[i] >= 48)
-		{	
+		{
 			n = 0;
 			c = '0';
 			while (c != str[i])

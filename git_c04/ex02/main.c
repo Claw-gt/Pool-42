@@ -6,7 +6,7 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 13:59:28 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/22 14:12:19 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/23 15:53:19 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@ void	ft_putnbr(int nb);
 
 int	main(void)
 {
-	ft_putnbr(-423);
+	ft_putnbr(-2147483648);
 	return (0);
 }
