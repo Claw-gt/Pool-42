@@ -52,6 +52,7 @@ void	ft_putnbr(int nb)
 	if (nb == -2147483648)
 	{
 		int_min();
+		write(1, "-2147483648", 11);
 	}
 	else
 	{
