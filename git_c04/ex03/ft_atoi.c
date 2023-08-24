@@ -6,7 +6,7 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 14:20:01 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/24 17:15:15 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/24 18:07:30 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,20 @@ int	spaces(char *str, int i)
 		i++;
 	}
 	return (i);
+}
+
+int	minus_plus(char *str, int *i)
+{
+	int	count;
+
+	count = 0;
+	while (str[*i] == 45 || str[*i] == 43)
+	{
+		if (str[*i] == 45)
+			count++;
+		*i += 1;
+	}
+	return (count);
 }
 
 int	numbers(char ch, int num)
@@ -46,31 +60,15 @@ int	ft_atoi(char *str)
 	int		i;
 
 	i = 0;
-	count = 0;
 	num = 0;
-	while (str[i] != '\0') 
+	while (str[i] != '\0')
 	{
 		if (str[0] == 32 || (str[0] > 8 && str[0] < 14))
-			i =  spaces(str, i);
+			i = spaces(str, i);
 		if ((str[i] == 45 || str[i] == 43) && num == 0)
-		{	
-			while (str[i] == 45 || str[i] == 43)
-			{
-				if (str[i] == 45)
-					count++;
-				i++;
-			}	
-		}
+			count = minus_plus(str, &i);
 		if (str[i] <= 57 && str[i] >= 48)
 		{
-			/*n = 0;
-			c = '0';
-			while (c != str[i])
-			{	
-				c++;
-				n++;
-			}
-			num = num * dec + n;*/
 			num = numbers(str[i], num);
 			i++;
 		}

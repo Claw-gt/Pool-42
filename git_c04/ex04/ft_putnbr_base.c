@@ -6,10 +6,20 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 15:32:30 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/24 15:38:24 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/24 18:23:34 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int	error(char *str)
+{
+	while (str[i] != '\0')
+	{
+		i++;
+		if (str[i] == 45 || str[i] == 43
+	}
+	if (str == '\0' || i == 1)
+		return (1);
+}
 void	ft_putnbr_base(int nbr, char *base)
 {
 

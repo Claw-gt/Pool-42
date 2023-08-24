@@ -6,7 +6,7 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 16:22:17 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/24 17:16:31 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/24 18:04:09 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int	main(void)
 
 	num = 0;
 //	printf("%d", atoi("i -42"));
-	printf("%d", ft_atoi("r --+-42ias5"));
+	printf("%d", ft_atoi("  --+-42ias5"));
 	return (0);
 }
