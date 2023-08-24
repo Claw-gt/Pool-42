@@ -50,10 +50,12 @@ void	ft_putstr_non_printable(char *str)
 		if (str[i] < 32 || str[i] == 127)
 		{
 			write(1, "\\", 1);
-			div = str[i] / 16 + '0';
+			/*div = str[i] / 16 + '0';
 			write(1, &div, 1);
 			mod = str[i] % 16;
-			print_hex(mod);
+			print_hex(mod);*/
+			write(1, &"0123456789abcdef"[(unsigned char)str[i] / 16], 1);
+			write(1, &"0123456789abcdef"[(unsigned char)str[i] % 16], 1);
 		}
 		else
 			write(1, &str[i], 1);
