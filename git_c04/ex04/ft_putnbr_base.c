@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 12:05:22 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/24 15:39:49 by clagarci         ###   ########.fr       */
+/*   Created: 2023/08/24 15:32:30 by clagarci          #+#    #+#             */
+/*   Updated: 2023/08/24 15:38:24 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+void	ft_putnbr_base(int nbr, char *base)
 {
-	int	length;
 
-	length = 0;
-	while (str[length] != '\0')
-	{
-		length++;
-	}
-	return (length);
 }
