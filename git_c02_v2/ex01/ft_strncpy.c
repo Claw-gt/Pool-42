@@ -30,5 +30,6 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest++;
 		i++;
 	}
-	return (inicio);
+	dest = inicio;
+	return (dest);
 }
