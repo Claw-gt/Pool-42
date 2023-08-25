@@ -23,5 +23,5 @@ char	*ft_strcpy(char *dest, char *src)
 	}
 	*dest = '\0';
 	dest = inicio;
-	return (inicio);
+	return (dest);
 }
