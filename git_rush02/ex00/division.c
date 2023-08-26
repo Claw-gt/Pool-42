@@ -6,7 +6,7 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:50:31 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/26 18:11:44 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/26 18:24:40 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ int	*entry(int num)
 	}
 	entries[i++] = num / 10 * 10;
 	entries[i++] = num % 10;
+	entries[i++] = -1;
 	return (entries);
 }
