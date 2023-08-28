@@ -6,7 +6,7 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 14:20:01 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/24 18:07:30 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/28 13:17:53 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	numbers(char ch, int num)
 		n++;
 	}
 	num = num * dec + n;
+	//num = num * dec + str[i] - '0';
 	return (num);
 }
 
@@ -61,12 +62,12 @@ int	ft_atoi(char *str)
 
 	i = 0;
 	num = 0;
+	if (str[0] == 32 || (str[0] > 8 && str[0] < 14))
+		i = spaces(str, i);
+	if (str[i] == 45 || str[i] == 43)
+		count = minus_plus(str, &i);
 	while (str[i] != '\0')
 	{
-		if (str[0] == 32 || (str[0] > 8 && str[0] < 14))
-			i = spaces(str, i);
-		if ((str[i] == 45 || str[i] == 43) && num == 0)
-			count = minus_plus(str, &i);
 		if (str[i] <= 57 && str[i] >= 48)
 		{
 			num = numbers(str[i], num);

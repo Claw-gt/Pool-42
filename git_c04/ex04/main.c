@@ -5,19 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 12:06:43 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/28 10:19:01 by clagarci         ###   ########.fr       */
+/*   Created: 2023/08/25 14:36:30 by clagarci          #+#    #+#             */
+/*   Updated: 2023/08/28 11:25:38 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-int	ft_strlen(char *str);
+void	ft_putnbr_base(int nbr, char *base);
 
 int	main(void)
 {
-	printf("Library: %lu", strlen("3454b"));
-	printf("\nMyFunc: %d", ft_strlen("35f"));	
+	ft_putnbr_base(-3124, "01");
 	return (0);
 }
