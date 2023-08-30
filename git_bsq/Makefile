@@ -6,6 +6,10 @@ MY_SOURCES = main.c \
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
 
+.PHONY: fclean all clean
+
+all: $(NAME)
+
 CFLAGS += -Wall -Wextra -Werror
 
 $(NAME): $(MY_OBJECTS)
@@ -16,3 +20,5 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+
+re: fclean all

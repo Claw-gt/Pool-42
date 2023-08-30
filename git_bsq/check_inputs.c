@@ -6,7 +6,7 @@
 /*   By: issierra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 17:19:02 by issierra          #+#    #+#             */
-/*   Updated: 2023/08/29 18:36:48 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/30 17:34:22 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void	check_matrix(char **mat);
+void	check_matrix(char **mat, char *map);
 void	check_map(int error);
+int		*dimensions(char *mat);
 
 char	*line(char *mapa, int *i)
 {
@@ -65,13 +66,15 @@ char	**ft_two(char *mapa, int *i)
 	int		j;
 	int		k;
 	char	**mapa_two;
+	int		*dim;
 
 	k = 0;
 	j = 0;
-	mapa_two = (char **)malloc(sizeof(char *) * 100);
+	dim = dimensions(mapa);
+	mapa_two = (char **)malloc(sizeof(char *) * dim[0]);
 	while (mapa[*i] != '\0')
 	{
-		mapa_two[k] = (char *)malloc(sizeof(char) * 100);
+		mapa_two[k] = (char *)malloc(sizeof(char) * dim[1]);
 		while (mapa[*i] != '\n')
 		{
 			mapa_two[k][j] = mapa[*i];
@@ -85,7 +88,7 @@ char	**ft_two(char *mapa, int *i)
 	return (mapa_two);
 }
 
-int	check_firstline (char *str)
+int	check_firstline(char *str)
 {
 	int	i;
 	int	j;
@@ -127,6 +130,6 @@ int	validation(char *mapa)
 	mapa_two = ft_two(mapa, &i);
 	if (check_columns(mapa_two) == -1)
 		return (-1);
-	check_matrix(mapa_two);
+	check_matrix(mapa_two, mapa);
 	return (0);
 }
