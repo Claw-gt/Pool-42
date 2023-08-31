@@ -6,11 +6,21 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 15:32:30 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/27 12:29:52 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/31 14:11:38 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+int	ft_strlen(char *base)
+{
+	int	len;
+
+	len = 0;
+	while (base[len] != '\0')
+		len++;
+	return (len);
+}
 
 int	error(char *str)
 {
@@ -31,19 +41,9 @@ int	error(char *str)
 		}
 		i++;
 	}
-	if (str == '\0' || i == 1)
+	if (str == '\0' || i == 1i || ft_strlen(str) == 0)
 		return (1);
 	return (0);
-}
-
-int	ft_strlen(char *base)
-{
-	int	len;
-
-	len = 0;
-	while (base[len] != '\0')
-		len++;
-	return (len);
 }
 
 int	limits(char *base)
@@ -93,7 +93,7 @@ void	ft_putnbr_base(int nbr, char *base)
 				write(1, "-", 1);
 			}
 			if (nbr > limit)
-				ft_putnbr_base(nbr / ft_strlen(base), base);
+				ft_putnbr_base(nbr /ft_strlen(base), base);
 			module = nbr % (limit + 1);
 			write(1, &base[module], 1);
 		}
