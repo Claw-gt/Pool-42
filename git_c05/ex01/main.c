@@ -6,7 +6,7 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:27:23 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/28 15:31:00 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/31 15:15:24 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int	ft_recursive_factorial(int nb);
 
 int	main(void)
 {
-	printf("%d", ft_recursive_factorial(-34));
+	printf("%d", ft_recursive_factorial(4));
 	return (0);
 }

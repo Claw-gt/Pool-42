@@ -6,7 +6,7 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 16:20:47 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/28 16:40:26 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/31 15:19:14 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int	ft_fibonacci(int index);
 
 int	main(void)
 {
-	printf("%d", ft_fibonacci(3));
+	printf("%d", ft_fibonacci(6));
 	return (0);
 }

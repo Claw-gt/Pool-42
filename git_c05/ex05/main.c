@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 16:43:47 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/31 10:48:08 by clagarci         ###   ########.fr       */
+/*   Created: 2023/08/31 09:43:01 by clagarci          #+#    #+#             */
+/*   Updated: 2023/08/31 14:46:19 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+#include <stdio.h>
+
+int	ft_sqrt(int nb);
+
+int	main(void)
 {
 	int	num;
-	int	square;
-
-	square = 0;
-	num = 0;
-	if (nb % 10 == 2 || nb % 10 == 7 || nb % 10 == 3 || nb % 10 == 8)
-		num = 0;
-	else
-	{
-		while (square != nb && square <= nb)
-		{
-			num++;
-			square = num * num;
-			if (square == nb)
-				return (num);
-		}
-	}
+	
+	num = 2147483647;
+	printf("%d", ft_sqrt(num));
 	return (0);
 }

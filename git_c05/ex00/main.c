@@ -6,7 +6,7 @@
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 15:19:29 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/28 15:21:52 by clagarci         ###   ########.fr       */
+/*   Updated: 2023/08/31 15:13:50 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int	ft_iterative_factorial(int nb);
 
 int	main(void)
 {
-	printf("%d", ft_iterative_factorial(3));
+	printf("%d", ft_iterative_factorial(4));
 	return (0);
 }

@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 16:43:47 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/31 10:48:08 by clagarci         ###   ########.fr       */
+/*   Created: 2023/08/31 10:45:38 by clagarci          #+#    #+#             */
+/*   Updated: 2023/08/31 15:25:52 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
-{
-	int	num;
-	int	square;
+#include <stdio.h>
 
-	square = 0;
-	num = 0;
-	if (nb % 10 == 2 || nb % 10 == 7 || nb % 10 == 3 || nb % 10 == 8)
-		num = 0;
-	else
-	{
-		while (square != nb && square <= nb)
-		{
-			num++;
-			square = num * num;
-			if (square == nb)
-				return (num);
-		}
-	}
+int	ft_is_prime(int nb);
+
+int	main(void)
+{
+	printf("%d", ft_is_prime(17));
 	return (0);
 }

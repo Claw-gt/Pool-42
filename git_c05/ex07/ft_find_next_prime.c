@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clagarci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 16:43:47 by clagarci          #+#    #+#             */
-/*   Updated: 2023/08/31 10:48:08 by clagarci         ###   ########.fr       */
+/*   Created: 2023/08/31 11:39:22 by clagarci          #+#    #+#             */
+/*   Updated: 2023/08/31 12:03:58 by clagarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+int	ft_is_prime(int nb)
 {
 	int	num;
-	int	square;
 
-	square = 0;
-	num = 0;
-	if (nb % 10 == 2 || nb % 10 == 7 || nb % 10 == 3 || nb % 10 == 8)
-		num = 0;
-	else
+	num = 2;
+	if (nb <= 1)
+		return (0);
+	while (num < nb)
 	{
-		while (square != nb && square <= nb)
-		{
-			num++;
-			square = num * num;
-			if (square == nb)
-				return (num);
-		}
+		if (nb % num == 0)
+			return (0);
+		num++;
 	}
-	return (0);
+	return (1);
+}
+
+int	ft_find_next_prime(int nb)
+{
+	while (ft_is_prime(nb) == 0)
+		ft_is_prime(nb++);
+	return (nb);
 }
